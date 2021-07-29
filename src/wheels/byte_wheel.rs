@@ -12,6 +12,8 @@
 //!
 //! # Example
 //! Example usage of this abstraction can be seen in the source code of the [quad_wheel](crate::wheels::quad_wheel::QuadWheelWithOverflow).
+#[cfg(feature = "sgx")]
+use std::prelude::v1::*;
 
 /// A single entry in a slot
 pub struct WheelEntry<EntryType, RestType> {

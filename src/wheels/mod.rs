@@ -1,4 +1,6 @@
 //! This module contains the level 1 and 2 APIs for building event timers.
+#[cfg(feature = "sgx")]
+use std::prelude::v1::*;
 
 use super::*;
 use std::{

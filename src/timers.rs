@@ -1,3 +1,6 @@
+#[cfg(feature = "sgx")]
+use std::prelude::v1::*;
+
 use std::{fmt, hash::Hash, time::Duration};
 
 /// Indicate whether or not to reschedule a periodic timer

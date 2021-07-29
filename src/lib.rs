@@ -46,8 +46,15 @@
 //! ## Thread Timer
 //! The [thread_timer](thread_timer) module provides a timer for real-time event schedulling with millisecond accuracy.
 //! It runs on its own dedicated thread and uses a shareable handle called a `TimerRef` for communication with other threads.
-
+#![cfg_attr(feature = "sgx", no_std)]
 #![deny(missing_docs)]
+
+#[cfg(feature = "sgx")]
+#[macro_use]
+extern crate sgx_tstd as std;
+
+#[cfg(feature = "sgx")]
+use std::prelude::v1::*;
 
 use std::{hash::Hash, time::Duration};
 
